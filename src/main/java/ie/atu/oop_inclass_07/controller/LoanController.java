@@ -4,15 +4,14 @@ import ie.atu.oop_inclass_07.model.Loan;
 import ie.atu.oop_inclass_07.service.LoanService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.HttpStatus;
-import static org.springframework.http.HttpStatus.OK;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/loan")
 public class LoanController {
-    private LoanService loanService;
+    private loanService loanService;
 }
 
 public LoanController(LoanService loanService) {
@@ -26,6 +25,6 @@ public ResponseEntity<Loan>addLoan(@Valid@RequestBody Loan loan) {
 }
 
 @GetMapping
-public ResponseEntity<List<Loan>>getAllLoan() {
+public ResponseEntity<List<Loan>>getAllLoans() {
     return ResponseEntity.ok(LoanService.getAllLoan());
 }

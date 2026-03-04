@@ -20,6 +20,7 @@ public class GlobalExceptionHandler {
                 String message = fieldError.getDefaultMessage();
                 errors.put(fieldName, errorMessage);
             }
-        }return ResponseEntity.badRequest().body(errors);
+        }
+        return ResponseEntity.badRequest().body(errors);
     }
 }
